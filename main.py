@@ -20,7 +20,6 @@ app.add_middleware(
     allow_headers=["*"],
 )
 URI = os.getenv('URI')
-# URI =  "mongodb+srv://satwatn:navidkiid@event.8ao03zg.mongodb.net/?retryWrites=true&w=majority&appName=Event"
 client = MongoClient(URI, server_api=ServerApi('1'))
 
 try:
