@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student QR Check-in</title>
+    <!-- Link to the external CSS file -->
+    <link rel="stylesheet" href="style.css">
+    <!-- QR Scanner Library -->
+    <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">
+            <h1>Student QR Check-in</h1>
+            <p>Point the camera at a student's QR code to check them in.</p>
+        </div>
+
+        <!-- QR Code Scanner Viewport -->
+        <div id="qr-reader"></div>
+
+        <!-- Status Messages -->
+        <div id="status-message"></div>
+
+        <!-- List of Scanned Students -->
+        <div class="list-container">
+            <h2>Checked-in Students</h2>
+            <div id="scanned-list-container">
+                <p id="placeholder">No students checked in yet.</p>
+                <ul id="scanned-list">
+                    <!-- Scanned student IDs will be appended here -->
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Link to the external JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,217 @@
+/* General Body Styling */
+body {
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background: linear-gradient(135deg, #1d2b64 0%, #f8cdda 100%);
+    color: #ffffff;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+/* Main Container - Glassmorphism Effect */
+.container {
+    width: 100%;
+    max-width: 42rem;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    padding: 2.5rem;
+    transition: padding 0.3s ease;
+}
+
+/* Header Section */
+.header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+    transition: font-size 0.3s ease;
+}
+
+.header p {
+    color: #e5e7eb;
+    margin-top: 0.75rem;
+    font-size: 1.1rem;
+    transition: font-size 0.3s ease;
+}
+
+/* QR Reader Styling */
+#qr-reader {
+    max-width: 28rem;
+    margin: 0 auto;
+    aspect-ratio: 1 / 1;
+    border: 3px dashed rgba(255, 255, 255, 0.4);
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+/* Status Message Styling */
+#status-message {
+    margin-top: 1.5rem;
+    text-align: center;
+    height: 1.5rem;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+#status-message.success {
+    color: #a7f3d0; /* A light, modern green */
+}
+
+#status-message.error {
+    color: #fecaca; /* A light, modern red */
+    animation: pulse 1.5s infinite;
+}
+
+/* Simple pulse animation for errors */
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.8;
+    }
+}
+
+/* Checked-in List Styling */
+.list-container {
+    margin-top: 2.5rem;
+}
+
+.list-container h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 1rem;
+    color: #ffffff;
+    transition: font-size 0.3s ease;
+}
+
+#scanned-list-container {
+    max-height: 15rem;
+    overflow-y: auto;
+    background: rgba(0, 0, 0, 0.25);
+    border-radius: 0.75rem;
+    padding: 1rem;
+}
+
+#placeholder {
+    text-align: center;
+    color: #d1d5db;
+    padding: 2rem 0;
+}
+
+#scanned-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#scanned-list li {
+    padding: 1rem 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: background-color 0.2s ease-in-out;
+}
+
+#scanned-list li:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+
+#scanned-list li:last-child {
+    border-bottom: none;
+}
+
+#scanned-list .student-id {
+    font-family: monospace;
+    color: #bfdbfe; /* A light, readable blue */
+    font-size: 1.1rem;
+}
+
+#scanned-list .timestamp {
+    font-size: 0.875rem;
+    color: #9ca3af;
+}
+
+/* Custom scrollbar for webkit browsers */
+#scanned-list-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+#scanned-list-container::-webkit-scrollbar-track {
+  background: rgba(0,0,0,0.1);
+  border-radius: 10px;
+}
+
+#scanned-list-container::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+}
+
+#scanned-list-container::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* Responsive Design for Mobile Devices */
+@media (max-width: 640px) {
+    body {
+        padding: 0.5rem;
+        align-items: flex-start; /* Align container to the top on mobile */
+    }
+
+    .container {
+        padding: 1.5rem;
+        margin-top: 1rem;
+    }
+
+    .header h1 {
+        font-size: 2rem; /* Reduced from 2.5rem */
+    }
+
+    .header p {
+        font-size: 1rem; /* Reduced from 1.1rem */
+    }
+
+    #qr-reader {
+        border-width: 2px;
+    }
+
+    .list-container {
+        margin-top: 1.5rem;
+    }
+
+    .list-container h2 {
+        font-size: 1.25rem; /* Reduced from 1.5rem */
+    }
+    
+    #scanned-list-container {
+        padding: 0.75rem;
+        max-height: 12rem; /* Adjust height for smaller screens */
+    }
+
+    #scanned-list li {
+        padding: 0.75rem 0.25rem;
+    }
+
+    #scanned-list .student-id {
+        font-size: 1rem; /* Reduced from 1.1rem */
+    }
+}
+
